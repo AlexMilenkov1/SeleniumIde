@@ -35,10 +35,7 @@ jobs:
       - name: Run the tests
         env:
             CHROMEWEBDRIVER: /usr/bin/google-chrome
-            CHROME_USER_DATA_DIR: /tmp/chrome-user-data-dir  # Unique temp user data dir
-        run: |
-            # Run the tests with a unique user data directory
-            dotnet test -- --chrome-options "--user-data-dir=${{ env.CHROME_USER_DATA_DIR }}"
+        run: dotnet test 
              
         
       
