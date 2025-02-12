@@ -17,10 +17,6 @@ public class TC01IfUserIsInvalidTryAgainTest : IDisposable
     {
         ChromeOptions options = new ChromeOptions();
         options.AddArguments("headless");
-        options.AddArguments("no-sandbox");
-        options.AddArguments("disable-dev-shm-usage");
-        options.AddArguments("disable-gpu");
-        options.AddArguments("window-size=1920x1080");
 
 
         driver = new ChromeDriver();
