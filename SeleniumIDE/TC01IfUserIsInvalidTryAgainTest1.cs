@@ -17,7 +17,7 @@ public class TC01IfUserIsInvalidTryAgainTest : IDisposable
     {
         // Set up ChromeOptions to run headless in CI
         ChromeOptions options = new ChromeOptions();
-        options.AddArguments("headless");
+        options.AddArguments("--headless");
 
         // Create a unique user data directory path for ChromeDriver
         string userDataDir = Path.Combine(Directory.GetCurrentDirectory(), "chrome_user_data");
