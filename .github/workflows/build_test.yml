@@ -11,3 +11,31 @@ on:
 jobs:
    build:
       runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up .NET core
+        uses: actions/setup-dotnet@v3
+        with:
+           dotnet-version: '6.0.x'
+
+      - name: Install Chrome
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y google-chrome-stable
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build the application
+        run: dotnet build
+       
+      - name: Run the tests
+        env:
+            CHROMEWEBDRIVER: /usr/bin/google-chrome
+        run: dotnet test 
+             
+        
+      
